@@ -48,40 +48,68 @@ a {
 
 #overlay #container {
     position: absolute;
-    left: 40%;
-    top: 40%;
+    left: 50%;
+    top: 50%;
     transform: translate(-40%, -40%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-40%, -40%);
-    margin: 10% 10% 10% 10%;
+    width: auto;
     display: block;
     text-align: center;
+    display: none;
 }
 
-#overlay #exit {
+#overlay #container #exit {
     color: #fff;
-    background: rgba(0,0,0,0.5);
-    padding: 32px;
-    font-size: 24px;
+    background: rgba(0,0,0,1);
+    padding: 2.5%;
+    font-size: 16px;
+    font-weight: 700;
     position: absolute;
     top: 0;
     right: 0;
+    margin: 0 auto;
+    width: auto;
     cursor: pointer;
-    
+    -webkit-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	-moz-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	-ms-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	-o-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+}
+#overlay #container #exit:hover {
+    background: rgba(255,255,255,1);
+    color: #000;
 }
 
 
 #overlay #container img {
     display: block;
     margin: 0 auto;
-	max-width: 80%;
+	max-width: 100%;
 	height: auto;
 }
-#overlay p {
+#overlay #container p {
     color: #fff;
-    background: rgba(0,0,0,0.5);
-    display: inline-block;
-    padding: 16px 32px;
+    background: rgba(0,0,0,1);
+    display: block;
+    width: 95%;
+    padding: 2.5%;
+    font-size: 16px;
+    line-height: 24px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    -webkit-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	-moz-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	-ms-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	-o-transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+	transition: color 0.25s ease, border 0.25s ease, background 0.25s ease;
+}
+#overlay #container p:hover {
+    background: rgba(255,255,255,1);
+    color: #000;
 }
 
 

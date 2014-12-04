@@ -1,9 +1,11 @@
 //Problem: User when clicking on image goes to a dead end.
 //Solution: Create an overlay with the large image - Lightbox.
 
+
+
 //Create overlay jQuery object (element).
 var $overlay = $("<div id='overlay'></div>");
-var $imageContainer = $("<div id='container'></div>");
+var $boxContainer = $("<div id='container'></div>");
 
 //Create image jQuery object image (element) to append to overlay.
 var $image = $("<img>");
@@ -12,14 +14,19 @@ var $caption = $("<p></p>");
 
 var $exit = $("<span id='exit'>X</span>");
 
-$imageContainer.append($image);
-$imageContainer.append($caption);
+$boxContainer.append($image);
+$boxContainer.append($caption);
+$boxContainer.append($exit);
+
+
+// Once the overlay is fired but before it is served.
+    //Check for alt attribute in element.
+    //Create element if alt exists or do not create element.
 
 
 
 //Append image to overlay.
-$overlay.append($imageContainer);
-$overlay.append($exit);
+$overlay.append($boxContainer);
 
 //Append overlay to document.
 $("body").append($overlay);
@@ -38,8 +45,9 @@ $("#imageGallery li a").click(function(event){
     $image.attr("src", imageLocation);
     
     //Show the overlay.
-    $overlay.fadeIn();
-    
+    $($overlay).slideDown();
+    $($boxContainer).delay(400).fadeIn();
+    alert($(this).children("img").attr("altTitle"));
     var captionText = $(this).children("img").attr("alt");
     $caption.text(captionText);
     
@@ -51,10 +59,11 @@ $("#imageGallery li a").click(function(event){
 });
 
 //Hide overlay, image, and caption.
-$overlay.click(function(){
+$exit.click(function(){
   
   //Hide the overlay.
-  $(this).fadeOut();
+  $($boxContainer).fadeOut();
+    $($overlay).delay(400).slideUp();
 });
 
 
